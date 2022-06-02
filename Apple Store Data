@@ -1,0 +1,31 @@
+-- Create a store database
+
+CREATE TABLE store(id INTEGER PRIMARY KEY, model TEXT, price INTEGER, shelf INTEGER, quality TEXT);
+
+INSERT INTO store VALUES (1, "iPhone 4", 400, 100, "new");
+INSERT INTO store VALUES (2, "iPhone 5", 450, 100, "new");
+INSERT INTO store VALUES (3, "iPhone 6", 500, 100, "used");
+INSERT INTO store VALUES (4, "iPhone 6s", 550, 200, "new");
+INSERT INTO store VALUES (5, "iPhone 7", 600, 200, "used");
+INSERT INTO store VALUES (6, "iPhone 7s", 650, 200, "new");
+INSERT INTO store VALUES (7, "iPhone 8", 900, 200, "new");
+INSERT INTO store VALUES (8, "iPhone 8s", 925, 200, "used");
+INSERT INTO store VALUES (9, "iPhone 9", 950, 300, "new");
+INSERT INTO store VALUES (10, "iPhone 9s", 1000, 300, "new");
+INSERT INTO store VALUES (11, "iPhone 10", 1025, 300, "new");
+INSERT INTO store VALUES (12, "iPhone 10s", 1050, 300, "new");
+INSERT INTO store VALUES (13, "iPhone 11", 1175, 400, "used");
+INSERT INTO store VALUES (14, "iPhone 11s", 1200, 400, "new");
+INSERT INTO store VALUES (15, "iPhone 12", 1250, 400, "used");
+
+--display the database ordered by price.
+SELECT * FROM store 
+ORDER BY price desc;
+
+--W hich phones are in new condition.
+SELECT * FROM store 
+WHERE quality = "new";
+
+--what is total inventory amount?
+SELECT SUM(price) 
+FROM store;
